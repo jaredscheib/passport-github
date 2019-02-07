@@ -2,6 +2,8 @@
 
 The author of Passport-Github has not maintained the original module for a long time. Features in his module don't work since Github upgraded their API to version 3.0.  We forked it and re-published it to NPM with a new name `passport-github2`.
 
+Beyond that, the maintainers of this fork also don't seem to be maintaining that anymore, and it was necessary to fork and further modify this package in order to return all emails provided by GitHub, given the proper scopes. See example below for an overview of what's been added in this particular fork.
+
 [Passport](http://passportjs.org/) strategy for authenticating with [GitHub](https://github.com/)
 using the OAuth 2.0 API.
 
@@ -63,6 +65,9 @@ app.get('/auth/github/callback',
 ## Examples
 
 For a complete, working example, refer to the [login example](https://github.com/cfsghost/passport-github/tree/master/examples/login).
+
+As for the modifications made by this particular fork, they currently include:
+1. Ability to pass in `allRawEmails` flag to Strategy constructor to return all raw emails from `/user/emails` response, rather than only getting the one `primary` email from that response.
 
 ## Tests
 
